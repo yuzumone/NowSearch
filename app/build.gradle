@@ -2,6 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+def getSecretProperty(name) {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('secret.properties').newDataInputStream())
+    return properties.getProperty(name.toString())
+}
+
+def TWITTER_API_KEY = "\"${getSecretProperty('TWITTER_API_KEY')}\""
+def TWITTER_API_SECRET = "\"${getSecretProperty('TWITTER_API_SECRET')}\""
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -10,6 +19,8 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0.0"
+        buildConfigField 'String', 'TWITTER_API_KEY', TWITTER_API_KEY
+        buildConfigField 'String', 'TWITTER_API_SECRET', TWITTER_API_SECRET
     }
     buildTypes {
         release {
