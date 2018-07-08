@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NowSearch</string>
+    <string name="dark_mode">ダークモード</string>
 </resources>
