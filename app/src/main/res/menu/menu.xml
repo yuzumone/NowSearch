@@ -9,4 +9,10 @@
         android:checkable="true"
         app:showAsAction="never"
         />
+
+    <item
+        android:id="@+id/menu_license"
+        android:title="@string/license"
+        app:showAsAction="never"
+        />
 </menu>
