@@ -33,6 +33,8 @@ class SearchFragment : ListFragment() {
         mute.add("twittbot.net")
         mute.add("IFTTT")
         mute.add("tdr_dash")
+        mute.add("myThings_App")
+        mute.add("ＯｄａＹｕｋｉｏのツール")
         return "#tdr_now OR #tdr_md OR #tdr_food" +
                 mute.joinToString(separator = "") { " -source:$it" }
     }
